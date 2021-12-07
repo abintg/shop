@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+Template Name: Sislaf
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Mi</title>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'home/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url({% static 'home/images/demo/backgrounds/222.jpg' %});">
+  <!-- ################################################################################################ -->
+
+
+        <!-- ################################################################################################ -->
+
+        <!-- ################################################################################################ -->
+
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+        <!-- ################################################################################################ -->
+        <h1><a href="/">MI_STORE</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+<!--           <ul class="w3-ul">-->
+<!--    <li><i class="fa fa-home"></i> Home</li>-->
+
+          <a href="/"><li class="fa fa-home"> home </li></a>&nbsp;&nbsp;
+
+          <li><a  href="{% url 'cartDetails' %}"><i class="fa fa-shopping-cart" style="font-size:28px;color:yellow"></i>&nbsp;{{itc}}</a></li>
+
+
+
+                            {% if user.is_authenticated %}
+
+                            <li style="color:cyan";> hello:{{user.username}}</li>
+
+                            <li class="scroll-to-section"><a class="active" href="accounts/logout">logout</a></li>
+                            {% else %}
+
+          <li><a class="active" href="accounts/login">login</a></li>
+          <li><a class="active" href="accounts/register">register</a></li>
+             {% endif %}
+
+
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
